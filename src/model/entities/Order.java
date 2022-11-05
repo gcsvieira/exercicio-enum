@@ -73,11 +73,12 @@ public class Order {
         sb.append("ORDER SUMMARY: \n");
         sb.append("Order moment: " + getMoment() + "\n");
         sb.append("Order status: " + getStatus() + "\n");
-        sb.append("Client: " + client.getName() + " - " + client.getEmail());
+        sb.append("Client: " + client.getName() + " - " + client.getEmail() + "\n");
         sb.append("Ordered items: \n");
         for (OrderItem orderItem : items) {
             sb.append(orderItem.toString() + "\n");
         }
+        sb.append("Total price: " + total());
 
         return sb.toString();
     }

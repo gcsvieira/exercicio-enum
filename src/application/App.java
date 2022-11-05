@@ -23,7 +23,7 @@ public class App {
         System.out.print("Email: ");
         String email = scan.nextLine();
         System.out.print("Birth Date (DD/MM/YYYY): ");
-        LocalDate bDate = LocalDate.parse(scan.nextLine());
+        String bDate = scan.nextLine();
 
         client = new Client(name, email, bDate);
 
@@ -34,7 +34,8 @@ public class App {
         order = new Order(LocalDate.now(), OrderStatus.valueOf(orderStatus), client);
 
         do {
-            System.out.println("Enter item #" + amountItem + " data:");
+            Integer itemPosition = 1;
+            System.out.println("Enter item #" + itemPosition + " data:");
             System.out.print("Product name: ");
             String pName = scan.nextLine();
             System.out.print("Product price: ");
@@ -48,8 +49,11 @@ public class App {
 
             System.out.println();
             System.out.println("Do you want to add another item? (Y/N)");
+            Character result = scan.next().charAt(0);
+            scan.nextLine();
 
-            if (scan.nextLine() == "n" || scan.nextLine() == "N")
+            itemPosition++;
+            if (result == 'n' || result == 'N')
                 amountItem = false;
 
         } while (amountItem == true);

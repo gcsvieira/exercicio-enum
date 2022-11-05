@@ -10,10 +10,10 @@ public class Client {
     private String email;
     private LocalDate birthDate;
 
-    public Client(String name, String email, LocalDate birthDate) {
+    public Client(String name, String email, String birthDate) {
         this.name = name;
         this.email = email;
-        this.birthDate = birthDate;
+        this.birthDate = LocalDate.parse(birthDate, standardFmt);
     }
 
     public String getName() {
