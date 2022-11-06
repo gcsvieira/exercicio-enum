@@ -14,6 +14,7 @@ public class App {
         Scanner scan = new Scanner(System.in);
         Order order;
         Client client;
+        Integer itemPosition = 1;
 
         Boolean amountItem = true;
 
@@ -34,7 +35,6 @@ public class App {
         order = new Order(LocalDate.now(), OrderStatus.valueOf(orderStatus), client);
 
         do {
-            Integer itemPosition = 1;
             System.out.println("Enter item #" + itemPosition + " data:");
             System.out.print("Product name: ");
             String pName = scan.nextLine();
